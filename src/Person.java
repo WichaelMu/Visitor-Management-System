@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
-public class Person {
-	static int _ID = 0;
+public class Person{
 	/** The list of every person.
 	 */
 	public static ArrayList<Person> People = new ArrayList<Person>();
+	static int _ID = 0;
+	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
 	/** The unique ID of this person.
 	 */
@@ -23,6 +26,10 @@ public class Person {
 	 */
 	private String PhoneN;
 
+	/** The time this person checked in.
+	 */
+	private LocalDateTime TimeIn;
+
 	public Person(String F_name, String S_name, String Suburb, String PhoneN){
 		ID = ++_ID;
 		People.add(this);
@@ -32,6 +39,7 @@ public class Person {
 		this.Suburb = Suburb;
 		this.PhoneN = PhoneN;
 
+		TimeIn = LocalDateTime.now();
 	}
 
 	/**@return The first and last name of this person.*/
@@ -43,5 +51,4 @@ public class Person {
 	public String toString(){
 		return ID + ": " + name() + "\nPhone No.: " + this.PhoneN + "\nSuburb: " + this.Suburb;
 	}
-
 }
