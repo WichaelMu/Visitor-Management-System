@@ -1,22 +1,48 @@
+import sun.plugin2.os.windows.SECURITY_ATTRIBUTES;
+
 import java.util.ArrayList;
 
 public class Person {
 	static int _ID = 0;
-	public int ID;
-	private String name;
+	/** The list of every person.
+	 */
 	public static ArrayList<Person> People = new ArrayList<Person>();
 
-	public Person(String name){
+	/** The unique ID of this person.
+	 */
+	public int ID;
+
+	/** The first name of this person.
+	 */
+	private String F_name;
+	/** The surname of this person.
+	 */
+	private String S_name;
+	/** The suburb of this person.
+	 */
+	private String Suburb;
+	/** The phone number of this person.
+	 */
+	private String PhoneN;
+
+	public Person(String F_name, String S_name, String Suburb, String PhoneN){
 		ID = ++_ID;
 		People.add(this);
-		this.name = name;
+
+		this.F_name = F_name;
+		this.S_name = S_name;
+		this.Suburb = Suburb;
+		this.PhoneN = PhoneN;
+
 	}
 
+	/**@return The first and last name of this person.*/
+
 	public String name(){
-		return this.name;
+		return this.F_name + " " + this.S_name;
 	}
 
 	public String toString(){
-		return this.name + " " + ID;
+		return ID + ": " + name() + "\nPN: " + this.PhoneN + "\nSuburb: " + this.Suburb;
 	}
 }
