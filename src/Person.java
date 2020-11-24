@@ -29,6 +29,8 @@ public class Person{
 	/** The time this person checked in.
 	 */
 	private LocalDateTime TimeIn;
+	private ArrayList<LocalDateTime> CheckedInTimes = new ArrayList<LocalDateTime>();
+	private ArrayList<LocalDateTime> CheckedOutTimes = new ArrayList<LocalDateTime>();
 
 	public Person(String F_name, String S_name, String Suburb, String PhoneN){
 		ID = ++_ID;
@@ -40,12 +42,17 @@ public class Person{
 		this.PhoneN = PhoneN;
 
 		TimeIn = LocalDateTime.now();
+		CheckedInTimes.add(TimeIn);
 	}
 
 	/**@return The first and last name of this person.*/
 
 	public String name(){
 		return this.F_name + " " + this.S_name;
+	}
+
+	public void CheckOut(){
+		CheckedOutTimes.add(LocalDateTime.now());
 	}
 
 	public String toString(){
