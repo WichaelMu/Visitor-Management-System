@@ -1,5 +1,3 @@
-import sun.plugin2.os.windows.SECURITY_ATTRIBUTES;
-
 import java.util.ArrayList;
 
 public class Person {
@@ -43,6 +41,7 @@ public class Person {
 	}
 
 	public String toString(){
-		return ID + ": " + name() + "\nPN: " + this.PhoneN + "\nSuburb: " + this.Suburb;
+		return ID + ": " + name() + "\nPhone No.: " + this.PhoneN + "\nSuburb: " + this.Suburb;
 	}
+
 }
