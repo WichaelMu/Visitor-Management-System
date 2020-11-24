@@ -17,6 +17,9 @@ public class Main extends Application {
 
 
 	public static void main(String[] args) {
+		Person one = new Person("nigga");
+		Person two = new Person("nigga");
+
 		launch(args);
 	}
 }
